@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title></title>
+        <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        <link rel="stylesheet" href="styles/styles.css">
+        <link rel="stylesheet" href="styles/navBar.css">
+        <link rel="stylesheet" href="styles/bikeSelect.css">
+        <link rel="stylesheet" href="styles/selectedBike.css">
+        <link rel="stylesheet" href="styles/basket.css">
+        <script src="scripts/calculations.js"></script>
+        <script src="scripts/make-html.js"></script>
+        <script type="text/javascript">
+            function getQueryStringValue (key) {
+                return decodeURIComponent(window.location.search.replace(new RegExp("^(?:.*[&\\?]" + encodeURIComponent(key).replace(/[\.\+\*]/g, "\\$&") + "(?:\\=([^&]*))?)?.*$", "i"), "$1"));
+            }
+            function writeBasket(itemsRaw) {
+                var items = itemsRaw.split('|');
+                var totalPrice = 0;
+                for (var item = 0; item < items.length - 1; item++) {
+                    items[item] = items[item].split(',')
+                    if (item % 2 == 0) {
+                        var style = " style='background: rgb(240, 240, 240);' ";
+                    } else {
+                        var style = "";
+                    }
+                    var productList = document.getElementById('productList').innerHTML += `
+                        <tr `+style+`>
+                            <td style="max-width: 50px;"><img src="`+items[item][4]+`"></td>
+                            <td class="productDetails" style="padding-left: 8px; text-align: left;">
+                                `+ items[item][0].replace('+', ' ') +`<br>
+                                Quantity: `+ items[item][2] +`<br>
+                                Duration: `+ items[item][3] +`
+                            </td>
+                            <td class="productPrice" style="padding-right: 8px; text-align: right;">
+                                `+ items[item][1] +`
+                            </td>
+                        </tr>
+                    `;
+                    totalPrice += parseFloat(items[item][1].replace("£", ''));
+                }
+                document.getElementById('nodiscountprice').innerHTML = totalPrice;
+                document.getElementById('price').innerHTML = "£" + totalPrice.toFixed(2);
+            }
+        </script>
+        <style media="screen">
+            .contentContainer {
+                width: 800px;
+                max-width: 100%;
+                background: white;
+                margin: auto;
+                margin-top: 16px;
+                box-shadow: 0px 1px 8px rgba(0, 0, 0, 0.1);
+            }
+            .titleContainer {
+                width: 100%;
+                background: rgb(187, 7, 7);
+                color: white;
+                font-size: 10px;
+            }
+            h1 {
+                padding: 8px;
+            }
+        </style>
+    </head>
+    <body onload="writeBasket(getQueryStringValue('items')); printHeader(); getDiscountedRent();">
+        <!-- HEADER -->
+        <div id="header">
+            <!-- Header is printed here when browser loads. See scripts/make-html.js [printHeader()]-->
+        </div>
+
+        <div class="contentContainer" style="margin-top: 132px;">
+            <div class="titleContainer">
+                <h1>Account Details</h1>
+            </div>
+            <label for="firstname">First Name:</label>
+            <input type="text" name="firstname" value="" id="firstname">
+            <label for="lastname">Last Name:</label>
+            <input type="text" name="lastname" value="" id="lastname">
+            <br>
+            <label for="email">Email:</label>
+            <input type="text" name="email" value="" id="email">
+            <label for="phone">Phone:</label>
+            <input type="text" name="phone" value="" id="email">
+        </div>
+
+        <div class="contentContainer">
+            <div class="titleContainer">
+                <h1>Account Details</h1>
+            </div>
+            <label for="discountcode">Discount Code:</label>
+            <input id="disCode" type="text" name="discountcode" value="" onkeypress="getDiscountedRent(this.value)">
+        </div>
+
+        <div class="contentContainer">
+            <div class="titleContainer">
+                <h1>Order Summary</h1>
+            </div>
+            <table style="width: 100%; border-collapse: collapse;" id="productList">
+            </table>
+            <b><span>Total Price:</span>
+            <span id="price">£0</span></b>
+            <div id="nodiscountprice" style="display: none">
+                100
+            </div>
+        </div>
+
+    </body>
+</html>

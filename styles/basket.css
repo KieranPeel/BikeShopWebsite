@@ -1,0 +1,109 @@
+#basketContainer {
+    top: 0;
+    position: fixed;
+    z-index: 100;
+}
+#basket {
+    display: block;
+    width: 200px;
+    max-width: 100%;
+    height: 100vh;
+    background: #333333;
+    color: white;
+    transition: .25s ease .1s;
+}
+
+#basket:hover {
+    width: 500px;
+    max-width: 100%;
+}
+
+.basketItem>.image {
+    max-width: 150px;
+    max-width: 100px;
+}
+
+.basketItem>.text {
+    font-size: 0%;
+    transition: .25s ease .1s;
+}
+
+#basket:hover .text {
+    font-size: 100%;
+}
+
+.basketItem>tr {
+    transition: .25s ease .1s;
+}
+
+.basketItem:hover {
+    background-color: rgba(0, 0, 0, 0.1);
+}
+
+.basketItemName {
+    font-size: 16px;
+}
+
+#basket>h1 {
+    font-size: 24px;
+    background: rgba(0, 0, 0, 0.3);
+    padding-top: 16px;
+    padding-bottom: 16px;
+    text-align: center;
+    padding-top: 116px;
+}
+
+.basketItems>table {
+    /* Removes spacing between rows and columns */
+    font-size: 0;
+    border-collapse: collapse;
+    width: 100%;
+}
+
+.basketItem {
+    margin: 16px;
+    font-size: 16px;
+    vertical-align: top;
+}
+
+.basketItem>td {
+    padding: 8px;
+}
+
+#checkoutContainer {
+    position: absolute;
+    left: 50%;
+    bottom: 32px;
+}
+
+#checkoutButton {
+    position: relative;
+    color: white;
+    background-color: #60FF73;
+    border: none;
+    width: 100%;
+    max-width: 150px;
+    text-align: center;
+    margin-top: 16px;
+    cursor: pointer;
+    left: -50%;
+}
+
+.removebasketItemButton>i {
+    font-size: 0px;
+    cursor: pointer;
+    transition: .25s ease .1s;
+}
+
+#basket:hover .removebasketItemButton>i {
+    font-size: 16px;
+}
+
+.basketItems {
+    height: 85%;
+    overflow: scroll;
+}
+
+.removebasketItemButton {
+    text-align: right;
+}

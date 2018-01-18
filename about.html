@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title></title>
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="styles/styles.css">
+    <link rel="stylesheet" href="styles/navBar.css">
+    <link rel="stylesheet" href="styles/bikeSelect.css">
+    <link rel="stylesheet" href="styles/selectedBike.css">
+    <script src="scripts/calculations.js"></script>
+    <script src="scripts/make-html.js"></script>
+
+    <style media="screen">
+        #content {
+            margin: auto;
+            margin-top: 150px;
+            max-width: 800px;
+        }
+        .title {
+            text-align: center;
+            padding-bottom: 4px;
+            margin-bottom: 8px;
+            border-bottom: solid rgba(0, 0, 0, 0.1);
+
+        }
+        .block {
+            background: white;
+            padding: 16px;
+            box-shadow: 0px 1px 8px rgba(0, 0, 0, 0.1);
+        }
+        #teamTable {
+            text-align: left;
+            border-collapse: collapse;
+            width: 100%;
+        }
+        #teamTable tr:nth-child(even) {
+            background: rgb(240, 240, 240);
+        }
+        #teamTable tr th {
+            padding: 16px;
+            padding-bottom: 8px;
+
+            color: white;
+            background: rgb(187, 7, 7);
+        }
+        #teamTable tr td {
+            padding: 16px;
+            padding-bottom: 8px;
+            padding-top: 8px;
+        }
+    </style>
+</head>
+
+<body onload="printHeader();">
+    <div id="header">
+        <!-- Header is printed here when browser loads. See scripts/make-html.js [printHeader()]-->
+    </div>
+
+    <div id="content">
+        <div class="block">
+            <h1 class="title">About The Company</h1>
+            <p id="about_paragraph">Bit Squad is a flourishing new web development company set up by students from The North East College in Aberdeen. We at bit squad are proud to strive towards excellance by providing the latest in modern technology and cutting edge modern design.</p>
+        </div>
+        <br><br>
+
+        <div class="block">
+            <h1 class="title">The Team</h1>
+            <table id="teamTable">
+                <thead>
+                    <th>Name</th>
+                    <th>Role</th>
+                </thead>
+                <tr>
+                    <td>Rebecca Seago</td>
+                    <td>Project Manager</td>
+                </tr>
+                <tr>
+                    <td>Kevin Kelbie</td>
+                    <td>Project Developer & Tester</td>
+                </tr>
+                <tr>
+                    <td>Kieran Peel</td>
+                    <td>System Analyist & Librarian</td>
+                </tr>
+                <tr>
+                    <td>Steven Crockart</td>
+                    <td>Systems Designer</td>
+                </tr>
+            </table>
+        </div>
+        <br><br>
+
+        <div class="block">
+            <h1 class="title">Don't miss out - Sign up for exclusive offers!</h1>
+            <p style="text-align: center;">Enter your details below to receive our email newsletter with our latest news and special offers.</p>
+           <form>
+             <input id="email" style="width: 100%; margin-top: 4px; margin-bottom: 4px; padding: 8px; padding-right: 0px; padding-left: 0px; text-align: center;" type="text" pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-z]{2,3}$" title="Enter a valid email like 'example@me.com'"  name="email" placeholder="example@me.com" autocomplete="off"><br>
+             <input style="display:block; margin: 0 auto; padding: 32px; padding-top: 8px; padding-bottom: 8px;" type="submit" value="Sign Up!">
+           </form>
+        </div>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title></title>
+
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="styles/styles.css">
+    <link rel="stylesheet" href="styles/navBar.css">
+    <link rel="stylesheet" href="styles/bikeSelect.css">
+    <link rel="stylesheet" href="styles/selectedBike.css">
+    <link rel="stylesheet" href="styles/basket.css">
+    <script src="scripts/calculations.js"></script>
+    <script src="scripts/make-html.js"></script>
+    <script>
+        function myFunction(name, price, quantity, duration, image) {
+            var imageURL = (image.style.background.split('"')[1]);
+            document.getElementById("basketItemsTable").innerHTML += `
+                <tr class="basketItem">
+                    <td class='image'>
+                        <img src=`+imageURL+` alt="">
+                    </td>
+                    <td class='text'>
+                        <div class="basketItemName">
+                            ` + name + `
+                        </div>
+                        <div class="basketItemPrice">
+                            Price: ` + price + `
+                        </div>
+                        <div class="basketItemDuration">
+                            Duration: ` + duration + ` days
+                        </div>
+                        <div class="basketItemQuantity">
+                            Quantity: ` + quantity + `
+                        </div>
+                    </td>
+                    <td class="removebasketItemButton">
+                        <i class="material-icons" onclick="removeItem()">clear</i>
+                    </td>
+                </tr>
+            `
+        	var v = document.getElementById("myNumber").value;
+            document.getElementById("myNumber").value = v + name +','+ price +','+ quantity +','+ duration + ',' + imageURL + '|';
+        }
+    </script>
+</head>
+
+<body onload="printBikeInfo(); printHeader();">
+    <!-- BASKET -->
+    <div id="basketContainer">
+    	<div id="basket">
+    		<h1>BASKET</h1>
+    		<div class="basketItems">
+    			<table id="basketItemsTable">
+    			</table>
+    		</div>
+        		<div id="checkoutContainer">
+                    <form id="hiddenForm" action="checkout.html" method="GET" onsubmit="if(!confirm('You will not be able to add/remove any more items if you submit.\nDo you wish to go to checkout?')){return false;}">
+                        <input style="display: none;" type="text" id="myNumber" name='items' value="" autocomplete="off">
+                        <div id="checkoutButton">
+                            <input style="border: none; background: none; color: white; padding: 8px; cursor: pointer;" type="submit" value="Proceed to Checkout">
+                            <!--<i style="position: absolute; top: 0; right: 0;" class="material-icons">arrow_forward</i>-->
+                        </div>
+                    </form>
+        		</div>
+    	</div>
+    </div>
+
+
+    <!-- HEADER -->
+    <div id="header">
+        <!-- Header is printed here when browser loads. See scripts/make-html.js [printHeader()]-->
+    </div>
+
+    <!-- BIKE SELECTION -->
+    <div style="margin-left: 216px; margin-right: 16px; min-width: 600px;">
+        <h1 style="margin:auto; text-align: left; margin-top: 150px; max-width: 800px;">Adult</h1>
+        <table class="bikes">
+            <tr id="adultBikes">
+                <!-- Columns are printed here when the browser loads. See sripts/make-html.js [printBikeInfo()] -->
+            </tr>
+        </table>
+        <h1 style="margin:auto; text-align: left; max-width: 800px;">Kids</h1>
+        <table class="bikes">
+            <tr id="kidBikes">
+                <!-- Columns are printed here when the browser loads. See sripts/make-html.js [printBikeInfo()] -->
+            </tr>
+        </table>
+    </div>
+
+    <!-- SELECTED BIKE -->
+    <div style="margin-left: 216px; margin-right: 16px; min-width: 600px;">
+        <table id="info">
+            <tr>
+                <td id="imageContainer">
+                    <div id="image"></div>
+                </td>
+                <td id="textDetails">
+                    <h1 id="selectedName"></h1>
+                    <p id="selectedDesc"></p>
+                    <p id="price"></p>
+                </td>
+                <td style="width: 200px;">
+                    <table id="buttons" style="display: none;">
+                        <form id="qad">
+                            <tr class="button" id="quantity">
+                                <td>Quantity:</td>
+                                <td class="icon">
+
+                                    <input id="q" type="number" name="quantity" value="0" min="0" max="10" onchange="calculate_rent(0);">
+
+                                </td>
+                            </tr>
+                            <tr class="button" id="duration">
+                                <td>Duration:</td>
+                                <td class="icon">
+
+                                    <input id="d" type="number" name="quantity" value="1" min="1" max="30" onchange="calculate_rent(0);">
+
+
+                                </td>
+                            </tr>
+
+                        </form>
+                                <tr class="button" id="add" onclick="myFunction(document.getElementById('selectedName').innerHTML, document.getElementById('price').innerHTML, document.getElementById('q').value, document.getElementById('d').value, document.getElementById('image'))">
+                                    <td>
+                                        Add
+                                    </td>
+                                    <td class="icon">
+                                        <i class="material-icons">add</i>
+                                    </td>
+                                </tr>
+                                <tr class="button" id="cancel" onclick="document.getElementById('info').style.display = 'none'">
+                                    <td>
+                                        Cancel
+                                    </td>
+                                    <td class="icon">
+                                        <i class="material-icons">clear</i>
+                                    </td>
+                                </tr>
+                    </table>
+                </td>
+            </tr>
+        </table>
+    </div>
+
+
+</body>
+
+</html>

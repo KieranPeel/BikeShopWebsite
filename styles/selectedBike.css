@@ -1,0 +1,72 @@
+#info {
+    width: 800px;
+    margin: auto;
+    margin-top: 32px;
+    table-layout: fixed;
+}
+
+#imageContainer {
+    vertical-align: top;
+    width: 192px;
+    height: 108px;
+}
+
+#image {
+    vertical-align: top;
+    width: 192px;
+    height: 108px;
+    background-size: cover !important;
+    background-position: center center !important;
+}
+
+#textDetails {
+    text-align: left;
+    vertical-align: top;
+    padding-left: 8px;
+}
+
+#selectedName {
+    font-size: 24px;
+}
+
+#selectedDesc {
+    font-size: 14px;
+    color: rgb(122, 122, 122);
+}
+
+#buttons {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+.button {
+    cursor: pointer;
+    width: 100%;
+    text-align: center;
+}
+
+.button>td {
+    color: white;
+    padding: 8px;
+}
+
+.icon {
+    background: rgba(0, 0, 0, 0.2);
+}
+
+#add {
+    background: #60FF73;
+}
+
+#cancel {
+    background: #FF606C;
+}
+
+#quantity {
+    background: grey;
+}
+
+#duration {
+    color: black;
+    background: grey;
+}

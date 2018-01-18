@@ -1,0 +1,63 @@
+.buttonLeft {
+    width: 30px;
+    height: 10px;
+    background: red;
+    right: 0;
+}
+.buttonRight {
+    width: 30px;
+    height: 10px;
+    background: red;
+    right: 0;
+}
+
+.bikes {
+    position: relative;
+    display: block;
+    overflow-x: auto;
+    margin: auto;
+    width: 100%;
+    max-width: 800px;
+}
+
+tr {}
+
+.bike {
+    position: relative;
+    height: 100px;
+    min-width: 300px;
+    background: black;
+}
+
+.name {
+    position: absolute;
+    color: white;
+    opacity: 0;
+    font-size: 16px;
+    left: 8px;
+    bottom: 0px;
+    z-index: 1;
+    transition: .2s .2s;
+}
+
+.image {
+    cursor: pointer;
+    height: 100%;
+    background-size: cover !important;
+    background-position: center center !important;
+    transition: .2s .2s;
+}
+
+td:hover .name {
+    opacity: 1;
+}
+
+td:hover .image {
+    -webkit-filter: blur(2px);
+    opacity: 0.5;
+}
+
+.catagory {
+    text-align: right;
+    margin-right: 16px;
+}

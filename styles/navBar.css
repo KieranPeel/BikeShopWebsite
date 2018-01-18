@@ -1,0 +1,111 @@
+#nav {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 100px;
+    background: rgb(255, 255, 255);
+    box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.3);
+    z-index: 9999;
+}
+
+ul#nav-buttons {
+    display: table;
+    height: 100%;
+    margin: auto;
+    width: 100%;
+    max-width: 1000px;
+}
+
+li.nav-button {
+    display: table-cell;
+    text-align: center;
+    font-size: 16px;
+}
+
+.option {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    padding-left: 16px;
+    padding-right: 16px;
+    width: 100px;
+    margin: auto;
+    color: grey;
+    line-height: 100px;
+    /* Keeps text in the middle of header */
+    transition: .25s ease .1s;
+}
+
+.underline {
+    position: absolute;
+    bottom: 0px;
+    left: 0px;
+    width: 0%;
+    height: 5px;
+    background: white;
+    transition: .25s ease .1s;
+}
+
+.nav-button>a:hover .underline {
+    width: 100%;
+    background: rgb(187, 7, 7);
+}
+
+.nav-button>a:hover .option {
+    color: rgb(187, 7, 7);
+}
+
+@media (max-width: 660px) {
+    #nav {
+        position: fixed;
+        top: 0;
+        width: 100%;
+        height: 100px;
+        background: rgb(255, 255, 255);
+        box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.3);
+        z-index: 9999;
+    }
+
+    #nav:hover ul#nav-buttons {
+        top: 100px;
+    }
+
+    ul#nav-buttons {
+        position: absolute;
+        top: -1000px;
+        width: 100%;
+        background: rgba(255, 255, 255, 0.97);
+        transition: .25s ease .1s;
+    }
+
+    li.nav-button {
+        width: 100%;
+        display: list-item;
+        text-align: center;
+        font-size: 16px;
+        transition: .25s ease .1s;
+    }
+    .option {
+        height: 100%;
+        padding-left: 16px;
+        padding-right: 16px;
+        width: 100px;
+        color: grey;
+        line-height: 100px;
+        /* Keeps text in the middle of header */
+        transition: .25s ease .1s;
+    }
+
+    .underline {
+        display: none;
+    }
+    .nav-button:hover {
+        background-color: rgba(187, 7, 7, 1);
+    }
+    .nav-button>a:hover .option {
+        color: white;
+    }
+    #bikeShop {
+        display: none;
+    }
+}

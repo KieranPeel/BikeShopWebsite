@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title></title>
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="styles/styles.css">
+    <link rel="stylesheet" href="styles/navBar.css">
+    <script src="scripts/calculations.js"></script>
+    <script src="scripts/make-html.js"></script>
+    <style media="screen">
+        .bike {
+            position: relative;
+            float: left;
+            margin-top: 10px;
+            margin-left: 5px;
+            margin-right: 5px;
+            max-width: 250px;
+            background: white;
+            height: 250px;
+        }
+        p {
+            visibility: hidden;
+            opacity: 0;
+            z-index: 1;
+            transition: .1s ease .1s;
+        }
+        .bike:hover p {
+            visibility: visible;
+            opacity: 100;
+        }
+    </style>
+</head>
+
+<body onload="printHeader();">
+    <div id="header">
+        <!-- Header is printed here when browser loads. See scripts/make-html.js [printHeader()]-->
+    </div>
+
+    <div style="margin: auto; margin-top: 132px; width: 100%; max-width: 900px;">
+            <div class="bike">
+                <div style="display: block; width: 100%; overflow: hidden; margin: auto;">
+                    <img style="width: 100%;" src="images/bikes/adult/2.png" alt="">
+                </div>
+                <h3 style="text-align: center; margin: auto; margin-bottom: 5px;">Black Rocket</h3>
+                <p style="padding: 8px; margin: auto; position: absolute; background: white;">For the tiny rider with big aspirations in your pack, the Hidden Canyon provides performance, comfort and style into a 20 inch wheel package. Whether they\'re looking to ride with friends in the neighborhood or with Mom & Dad on a camping trip,
+                the Hidden Canyon delivers with the same lightweight aluminum frame construction as our adult bikes, but with features appropriate for smaller riders.</p>
+            </div>
+            <div class="bike">
+                <div style="display: block; width: 100%; overflow: hidden; margin: auto;">
+                    <img style="width: 100%;" src="images/bikes/adult/1.png" alt="">
+                </div>
+                <h3 style="text-align: center; margin: auto; margin-bottom: 5px;">Purple Hornet</h3>
+                <p style="padding: 8px; margin: auto; position: absolute; background: white;">The 2017 Subrosa Salvador 2 inch cruiser bike features a chromoly toptube, downtube and wishbone frame with integrated headtube drilled for gyro tabs, 1-1/8 inch fork with chromoly steerer tube, Subrosa Uplift topload stem, 2-pc bars with 7 inch rise, TSC Chula grips, Rant Spring U-brake and Rant lever, Rant Bangin 8 chromoly 3-pc cranks with sealed Mid BB, 25T Subrosa Shred style sprocket, 14mm sealed cassette hub with 11T driver, 3/8 inch sealed front hub, 36H Rant single-wall 26 inch rims, 26x2.20 inch tires, Subrosa Bleached Pivotal seat and Rant Hella PC pedals. (30.2 lbs)</p>
+            </div>
+            <div class="bike">
+                <div style="display: block; width: 100%; overflow: hidden; margin: auto;">
+                    <img style="width: 100%;" src="images/bikes/adult/3.png" alt="">
+                </div>
+                <h3 style="text-align: center; margin: auto; margin-bottom: 5px;">White Raider</h3>
+                <p style="padding: 8px; margin: auto; position: absolute; background: white;">This is another bike in SE\'s retro collection. Frame is good ol\' 4130 chromoly steel and it sports the bigger 26-inch tires. It\'ll feel a lil heavier than the previous SE recommendations, but it\'ll be comfier on longer rides. The MacNeil also sports the bigger 26-inch tires and it\'s built much lighter.</p>
+            </div>
+            <div class="bike">
+                <div style="display: block; width: 100%; overflow: hidden; margin: auto;">
+                    <img style="width: 100%;" src="images/bikes/kid/1.png" alt="">
+                </div>
+                <h3 style="text-align: center; margin: auto; margin-bottom: 5px;">Green Devil</h3>
+                <p style="padding: 8px; margin: auto; position: absolute; background: white;">For the tiny rider with big aspirations in your pack, the Hidden Canyon provides performance, comfort and style into a 20 inch wheel package. Whether they\'re looking to ride with friends in the neighborhood or with Mom & Dad on a camping trip,
+                the Hidden Canyon delivers with the same lightweight aluminum frame construction as our adult bikes, but with features appropriate for smaller riders.</p>
+            </div>
+            <div class="bike">
+                <div style="display: block; width: 100%; overflow: hidden; margin: auto;">
+                    <img style="width: 100%;" src="images/bikes/kid/2.png" alt="">
+                </div>
+                <h3 style="text-align: center; margin: auto; margin-bottom: 5px;">Orange Knocker</h3>
+                <p style="padding: 8px; margin: auto; position: absolute; background: white;">For the tiny rider with big aspirations in your pack, the Hidden Canyon provides performance, comfort and style into a 20 inch wheel package. Whether they\'re looking to ride with friends in the neighborhood or with Mom & Dad on a camping trip,
+                the Hidden Canyon delivers with the same lightweight aluminum frame construction as our adult bikes, but with features appropriate for smaller riders.</p>
+            </div>
+            <div class="bike">
+                <div style="display: block; width: 100%; overflow: hidden; margin: auto;">
+                    <img style="width: 100%;" src="images/bikes/kid/3.png" alt="">
+                </div>
+                <h3 style="text-align: center; margin: auto; margin-bottom: 5px;">Pink Panther</h3>
+                <p style="padding: 8px; margin: auto; position: absolute; background: white;">For the tiny rider with big aspirations in your pack, the Hidden Canyon provides performance, comfort and style into a 20 inch wheel package. Whether they\'re looking to ride with friends in the neighborhood or with Mom & Dad on a camping trip,
+                the Hidden Canyon delivers with the same lightweight aluminum frame construction as our adult bikes, but with features appropriate for smaller riders.</p>
+            </div>
+    </div>
+</body>
+
+</html>
